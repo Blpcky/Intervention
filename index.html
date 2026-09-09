@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INTERVENTION</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Special+Elite&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --red:#e0111d;
+    --red-dim:#7a0d14;
+    --paper:#f4f1ea;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    height:100%;
+    background:var(--bg);
+    overflow-x:hidden;
+  }
+  body{
+    font-family:'Oswald', sans-serif;
+    color:var(--red);
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:24px;
+  }
+
+  /* scattered background quotes */
+  .quote-field{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .quote{
+    position:absolute;
+    font-family:'Special Elite', cursive;
+    color:var(--red-dim);
+    opacity:0.35;
+    white-space:nowrap;
+    letter-spacing:0.02em;
+    text-transform:uppercase;
+    filter:blur(0.2px);
+  }
+  .quote:nth-child(1){ top:6%;  left:4%;  font-size:1.6rem;  transform:rotate(-9deg); }
+  .quote:nth-child(2){ top:14%; right:5%; font-size:1.1rem;  transform:rotate(6deg); }
+  .quote:nth-child(3){ top:28%; left:2%;  font-size:1.3rem;  transform:rotate(4deg); }
+  .quote:nth-child(4){ top:38%; right:3%; font-size:1.8rem;  transform:rotate(-5deg); }
+  .quote:nth-child(5){ top:50%; left:6%;  font-size:1rem;    transform:rotate(-12deg); }
+  .quote:nth-child(6){ bottom:32%; right:6%; font-size:1.4rem; transform:rotate(8deg); }
+  .quote:nth-child(7){ bottom:20%; left:3%;  font-size:1.2rem; transform:rotate(-4deg); }
+  .quote:nth-child(8){ bottom:8%;  right:4%; font-size:1.6rem; transform:rotate(-7deg); }
+  .quote:nth-child(9){ bottom:6%;  left:8%;  font-size:1rem;   transform:rotate(10deg); }
+  .quote:nth-child(10){ top:4%;   left:38%; font-size:1rem;    transform:rotate(3deg); }
+  .quote:nth-child(11){ top:64%;  left:40%; font-size:1.1rem;  transform:rotate(-6deg); opacity:0.22; }
+  .quote:nth-child(12){ top:80%;  left:44%; font-size:0.95rem; transform:rotate(5deg); opacity:0.22; }
+
+  .flicker{ animation: flicker 5s infinite; }
+  @keyframes flicker{
+    0%,19%,21%,23%,25%,54%,56%,100%{ opacity:0.35; }
+    20%,24%,55%{ opacity:0.1; }
+  }
+
+  main{
+    position:relative;
+    z-index:2;
+    max-width:760px;
+  }
+
+  .eyebrow{
+    font-family:'Special Elite', cursive;
+    color:var(--paper);
+    opacity:0.7;
+    font-size:0.9rem;
+    letter-spacing:0.25em;
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+
+  h1{
+    font-family:'Anton', sans-serif;
+    font-size:clamp(3.2rem, 14vw, 9rem);
+    line-height:0.9;
+    letter-spacing:0.02em;
+    color:var(--red);
+    text-shadow:
+      0 0 18px rgba(224,17,29,0.55),
+      0 0 46px rgba(224,17,29,0.25);
+    animation: pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ text-shadow:0 0 18px rgba(224,17,29,0.55), 0 0 46px rgba(224,17,29,0.25); }
+    50%{ text-shadow:0 0 30px rgba(224,17,29,0.85), 0 0 70px rgba(224,17,29,0.4); }
+  }
+
+  .subhead{
+    margin-top:22px;
+    color:var(--paper);
+    font-size:1.05rem;
+    letter-spacing:0.05em;
+    opacity:0.85;
+  }
+  .subhead strong{ color:var(--red); }
+
+  .callouts{
+    margin-top:44px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+  }
+  .callouts span{
+    font-family:'Special Elite', cursive;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--red);
+    border:1px solid var(--red-dim);
+    padding:8px 14px;
+    opacity:0.85;
+  }
+
+  footer{
+    position:fixed;
+    bottom:14px;
+    left:0;
+    right:0;
+    text-align:center;
+    font-size:0.7rem;
+    letter-spacing:0.1em;
+    color:var(--red-dim);
+    opacity:0.6;
+    z-index:2;
+    text-transform:uppercase;
+  }
+
+  @media (max-width:520px){
+    .quote{ display:none; }
+    .quote:nth-child(1),.quote:nth-child(4),.quote:nth-child(8){ display:block; font-size:1rem; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="quote-field">
+    <div class="quote">"what have you done?"</div>
+    <div class="quote flicker">"you need to change..."</div>
+    <div class="quote">"we need to talk."</div>
+    <div class="quote">"this is for your own good"</div>
+    <div class="quote flicker">"everyone is here for you"</div>
+    <div class="quote">"it's time."</div>
+    <div class="quote">"we've all noticed"</div>
+    <div class="quote flicker">"it's not too late"</div>
+    <div class="quote">"how could you"</div>
+    <div class="quote">"we love you, that's why"</div>
+    <div class="quote">"there's no easy way to say this"</div>
+    <div class="quote">"the family has gathered"</div>
+  </div>
+
+  <main>
+    <div class="eyebrow">an emergency gathering</div>
+    <h1>INTERVENTION</h1>
+    <p class="subhead">from all of us here in Deven's friend group</p>
+  </main>
+
+  <footer>this is (probably) a joke</footer>
+
+</body>
+</html>
